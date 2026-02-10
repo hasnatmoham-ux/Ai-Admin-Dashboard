@@ -1,0 +1,4 @@
+import PageHeader from '../components/common/PageHeader.jsx';
+import DataTable from '../components/common/DataTable.jsx';
+import { logs } from '../data/mockData.js';
+export default function AuditLogs(){const cols=[{key:'time',label:'Timestamp'},{key:'actor',label:'Actor'},{key:'action',label:'Action'},{key:'resource',label:'Resource'},{key:'ip',label:'IP Address'},{key:'status',label:'Status'}];return <section className="page"><PageHeader title="Audit Logs" subtitle="Every admin action with actor, resource, status, timestamp, and IP address." actions={<button className="btn btn-secondary">Export Logs</button>}/><div className="filters"><input className="field" placeholder="Filter by actor or resource..."/><select className="field"><option>All actions</option><option>Approved</option><option>Exported</option><option>Failed</option></select><input className="field" type="date"/></div><DataTable columns={cols} rows={logs.map((l,i)=>({...l,id:i}))}/></section>}
