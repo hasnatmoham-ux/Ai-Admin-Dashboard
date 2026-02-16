@@ -1,0 +1,3 @@
+import PageHeader from '../components/common/PageHeader.jsx';
+import { roles, permissions } from '../data/mockData.js';
+export default function Roles(){return <section className="page"><PageHeader title="Roles & Permissions" subtitle="Permission matrix for internal admin access control." actions={<button className="btn btn-primary">Create Role</button>}/><div className="permission-grid"><div className="perm-cell perm-head">Permission</div>{roles.map(r=><div className="perm-cell perm-head" key={r}>{r}</div>)}{permissions.map((p,i)=>([<div className="perm-cell" key={p}><b>{p}</b></div>, ...roles.map((r,j)=><div className="perm-cell" key={r+p}><span className={`switch ${(j<3||i%2===0)&&r!=='Viewer'?'on':''}`}></span></div>)]))}</div></section>}
