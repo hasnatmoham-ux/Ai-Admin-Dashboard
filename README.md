@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🤖 AdminAI — AI-Powered Internal Admin Operations Platform
+# AdminAI — AI-Powered Internal Admin Operations Platform
 
 **A modern, enterprise-grade internal tooling dashboard for managing users, approvals, workflows, data, and AI-assisted operational decisions — all from a single console.**
 
@@ -20,31 +20,63 @@
 
 ---
 
-## 📑 Table of Contents
+## Live Walkthrough
 
-- [Overview](#-overview)
-- [Features](#-features)
-- [Architecture](#-architecture)
-- [Technology Stack](#-technology-stack)
-- [System Design](#-system-design)
-- [Domain Model & Database Schema](#-domain-model--database-schema)
-- [API Documentation (Target Contract)](#-api-documentation-target-contract)
-- [Project Structure](#-project-structure)
-- [Key Workflows](#-key-workflows)
-- [Screens & Modules](#-screens--modules)
-- [Security](#-security)
-- [Performance Optimizations](#-performance-optimizations)
-- [Scalability](#-scalability)
-- [Installation](#-installation)
-- [Environment Variables](#-environment-variables)
-- [Local Development](#-local-development)
-- [Deployment](#-deployment)
-- [Future Enhancements](#-future-enhancements)
-- [Why This Project Stands Out](#-why-this-project-stands-out)
+A full video walkthrough of the platform is available on Loom:
+
+**[Watch the AdminAI walkthrough on Loom](https://www.loom.com/share/5edf6e52455744d9909bd23a3f670138)**
 
 ---
 
-## 🧭 Overview
+## Screenshots
+
+### Operations Dashboard
+KPI tiles, time-series admin-action and ticket-volume charts, AI insights, pending approvals, and recent activity.
+
+![Operations Dashboard](src/Images/Screenshot%202026-06-09%20011101.png)
+
+### User Management
+Searchable, filterable user directory with status, risk scoring, and per-row actions.
+
+![User Management](src/Images/Screenshot%202026-06-09%20011120.png)
+
+### Roles & Permissions
+Visual RBAC matrix across six roles and eight privileged capabilities.
+
+![Roles and Permissions](src/Images/Screenshot%202026-06-09%20011140.png)
+
+### Workflows
+Automation monitoring with triggers, run history, success rates, and run/pause controls.
+
+![Workflows](src/Images/Screenshot%202026-06-09%20011154.png)
+
+---
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Features](#features)
+- [Architecture](#architecture)
+- [Technology Stack](#technology-stack)
+- [System Design](#system-design)
+- [Domain Model & Database Schema](#domain-model--database-schema)
+- [API Documentation (Target Contract)](#api-documentation-target-contract)
+- [Project Structure](#project-structure)
+- [Key Workflows](#key-workflows)
+- [Screens & Modules](#screens--modules)
+- [Security](#security)
+- [Performance Optimizations](#performance-optimizations)
+- [Scalability](#scalability)
+- [Installation](#installation)
+- [Environment Variables](#environment-variables)
+- [Local Development](#local-development)
+- [Deployment](#deployment)
+- [Future Enhancements](#future-enhancements)
+- [Why This Project Stands Out](#why-this-project-stands-out)
+
+---
+
+## Overview
 
 ### The Problem
 
@@ -56,11 +88,11 @@ Fast-growing companies accumulate a sprawl of internal tools: a refund console h
 
 | Outcome | How AdminAI delivers it |
 | --- | --- |
-| ⚡ **Faster operations** | One console for users, approvals, data, workflows, and alerts — no tool-switching. |
-| 🛡️ **Governance & compliance** | Every privileged action is captured in an immutable audit log with actor, resource, IP, and status. |
-| 🤖 **AI leverage** | Natural-language data queries, AI approval recommendations, and automated record summaries reduce manual triage. |
-| 💸 **Revenue protection** | Risk-scored approval queue surfaces high-impact refunds and discounts before they're rubber-stamped. |
-| 🔌 **Vendor consolidation** | Integration hub replaces a patchwork of point tools (warehouse, payments, support, CRM). |
+| **Faster operations** | One console for users, approvals, data, workflows, and alerts — no tool-switching. |
+| **Governance & compliance** | Every privileged action is captured in an immutable audit log with actor, resource, IP, and status. |
+| **AI leverage** | Natural-language data queries, AI approval recommendations, and automated record summaries reduce manual triage. |
+| **Revenue protection** | Risk-scored approval queue surfaces high-impact refunds and discounts before they're rubber-stamped. |
+| **Vendor consolidation** | Integration hub replaces a patchwork of point tools (warehouse, payments, support, CRM). |
 
 ### Target Users
 
@@ -72,68 +104,68 @@ Fast-growing companies accumulate a sprawl of internal tools: a refund console h
 
 ### Key Differentiators
 
-- 🧠 **AI-native, not AI-bolted-on** — every module exposes contextual AI (summaries, recommendations, NL→SQL).
-- 🧱 **Retool/Superblocks-class UX** without the per-seat lock-in — owned, themeable, and extensible.
-- 🔐 **Audit-first design** — observability and accountability are first-class, not an afterthought.
-- 🌐 **Environment-aware** — Production / Staging / Sandbox switching is built into the shell.
+- **AI-native, not AI-bolted-on** — every module exposes contextual AI (summaries, recommendations, NL to SQL).
+- **Retool/Superblocks-class UX** without the per-seat lock-in — owned, themeable, and extensible.
+- **Audit-first design** — observability and accountability are first-class, not an afterthought.
+- **Environment-aware** — Production / Staging / Sandbox switching is built into the shell.
 
 ---
 
-## ✨ Features
+## Features
 
 ### Core Features
 
-- 📊 **Operations Dashboard** — KPI cards (users, pending approvals, failed jobs, revenue impact), time-series admin-action and ticket-volume charts, pending-approval snapshot, live activity timeline, and a consolidated system-alerts feed.
-- 👥 **User Management** — searchable, filterable user directory with create-user modal and a detail drawer supporting password reset, suspension, and impersonation flows.
-- 🗂️ **Data Explorer** — Retool-style multi-entity browser (Customers, Orders, Payments, Tickets, Events, Logs) with tabbed navigation, column-aware tables, record drawers, and CSV export.
-- ✅ **Approval Queue** — unified review surface for refunds, discounts, data exports, and account actions with reviewer comments and approve / reject / request-info actions.
-- ⚙️ **Workflows** — monitoring for automation flows: triggers, run history, success rates, step counts, and run/pause controls.
-- 🔔 **Alerts & Incidents** — severity-ranked operational warnings (failed jobs, API issues, SLA risks, suspicious activity) with incident creation.
-- 📜 **Audit Logs** — chronological record of every privileged action with actor, resource, IP, status, and date filtering.
-- 🔌 **Integrations Hub** — connector cards for databases, warehouses, payments, CRM, and support tools with live connection status and sync health.
+- **Operations Dashboard** — KPI cards (users, pending approvals, failed jobs, revenue impact), time-series admin-action and ticket-volume charts, pending-approval snapshot, live activity timeline, and a consolidated system-alerts feed.
+- **User Management** — searchable, filterable user directory with create-user modal and a detail drawer supporting password reset, suspension, and impersonation flows.
+- **Data Explorer** — Retool-style multi-entity browser (Customers, Orders, Payments, Tickets, Events, Logs) with tabbed navigation, column-aware tables, record drawers, and CSV export.
+- **Approval Queue** — unified review surface for refunds, discounts, data exports, and account actions with reviewer comments and approve / reject / request-info actions.
+- **Workflows** — monitoring for automation flows: triggers, run history, success rates, step counts, and run/pause controls.
+- **Alerts & Incidents** — severity-ranked operational warnings (failed jobs, API issues, SLA risks, suspicious activity) with incident creation.
+- **Audit Logs** — chronological record of every privileged action with actor, resource, IP, status, and date filtering.
+- **Integrations Hub** — connector cards for databases, warehouses, payments, CRM, and support tools with live connection status and sync health.
 
 ### Advanced Features
 
-- 🌍 **Environment switcher** (Production / Staging / Sandbox) wired into global state via the topbar.
-- 🧩 **Composable UI primitives** — reusable `DataTable`, `Modal`, `Drawer`, `Badge`, and `PageHeader` components drive a consistent design language across every screen.
-- 🎯 **Semantic status tokens** — a single `toneFor()` mapper turns domain values (risk, severity, status) into consistent color semantics platform-wide.
-- 🔎 **Global command-style search** bar in the application shell.
-- 🍞 **Non-blocking toast notifications** via `sonner` for action feedback.
+- **Environment switcher** (Production / Staging / Sandbox) wired into global state via the topbar.
+- **Composable UI primitives** — reusable `DataTable`, `Modal`, `Drawer`, `Badge`, and `PageHeader` components drive a consistent design language across every screen.
+- **Semantic status tokens** — a single `toneFor()` mapper turns domain values (risk, severity, status) into consistent color semantics platform-wide.
+- **Global command-style search** bar in the application shell.
+- **Non-blocking toast notifications** via `sonner` for action feedback.
 
-### 🤖 AI Features
+### AI Features
 
-- 💬 **AI Copilot** — conversational assistant for internal ops: query records, summarize failed jobs, cross-reference customers with overdue invoices, and **draft approval/rejection notes**, with **generated SQL preview** so operators see exactly what would run.
-- 🧠 **AI Insights on the Dashboard** — anomaly callouts (e.g. "refund requests 42% above baseline") with prioritized, revenue-aware recommendations.
-- 📝 **AI Record Summaries** — one-click natural-language summaries of users and customer accounts in detail drawers.
-- ⚖️ **AI Approval Recommendations** — risk-aware guidance ("manual review before approval") attached to high-impact requests.
-- 🔧 **AI governance controls** — toggles to require human approval for AI actions, enable summaries, and enable anomaly detection.
+- **AI Copilot** — conversational assistant for internal ops: query records, summarize failed jobs, cross-reference customers with overdue invoices, and **draft approval/rejection notes**, with **generated SQL preview** so operators see exactly what would run.
+- **AI Insights on the Dashboard** — anomaly callouts (e.g. "refund requests 42% above baseline") with prioritized, revenue-aware recommendations.
+- **AI Record Summaries** — one-click natural-language summaries of users and customer accounts in detail drawers.
+- **AI Approval Recommendations** — risk-aware guidance ("manual review before approval") attached to high-impact requests.
+- **AI governance controls** — toggles to require human approval for AI actions, enable summaries, and enable anomaly detection.
 
-### 🛠️ Admin Features
+### Admin Features
 
-- 🔐 **Roles & Permissions matrix** — visual permission grid across six roles (Super Admin → Viewer) and granular capabilities (view/edit/delete users, approve requests, view audit logs, manage integrations, export data, use AI Copilot).
-- 🏢 **Organization settings** — org name, default timezone, and theming.
-- 🔑 **API key management** — masked keys with rotation.
-- 🗄️ **Data retention controls** — configurable audit-log retention.
-- 🎨 **Theme controls** — Light Enterprise / Dark Console / System Default.
+- **Roles & Permissions matrix** — visual permission grid across six roles (Super Admin to Viewer) and granular capabilities (view/edit/delete users, approve requests, view audit logs, manage integrations, export data, use AI Copilot).
+- **Organization settings** — org name, default timezone, and theming.
+- **API key management** — masked keys with rotation.
+- **Data retention controls** — configurable audit-log retention.
+- **Theme controls** — Light Enterprise / Dark Console / System Default.
 
-### 📈 Analytics Features
+### Analytics Features
 
-- 📉 **Time-series visualizations** — area chart for admin actions over time, bar chart for ticket volume by category (Recharts, responsive).
-- 📐 **KPI tiles** with trend deltas and directional context.
-- ❤️ **Customer health scoring** surfaced in the Data Explorer.
-- ✅ **Workflow success-rate analytics** per automation flow.
+- **Time-series visualizations** — area chart for admin actions over time, bar chart for ticket volume by category (Recharts, responsive).
+- **KPI tiles** with trend deltas and directional context.
+- **Customer health scoring** surfaced in the Data Explorer.
+- **Workflow success-rate analytics** per automation flow.
 
-### 🔒 Security Features
+### Security Features
 
-- 🧾 **Immutable audit trail** capturing actor, action, resource, IP address, status, and timestamp.
-- 🚦 **Risk scoring** on users and approval requests (Low / Medium / High).
-- 🕵️ **Suspicious-activity alerting** (e.g. unusual admin login detection).
-- ✋ **Human-in-the-loop AI** — explicit setting to require human approval for AI-initiated actions.
-- 🔐 **Authenticated route guarding** — all application routes are gated behind authentication.
+- **Immutable audit trail** capturing actor, action, resource, IP address, status, and timestamp.
+- **Risk scoring** on users and approval requests (Low / Medium / High).
+- **Suspicious-activity alerting** (e.g. unusual admin login detection).
+- **Human-in-the-loop AI** — explicit setting to require human approval for AI-initiated actions.
+- **Authenticated route guarding** — all application routes are gated behind authentication.
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ### High-Level
 
@@ -176,7 +208,7 @@ The client never talks to data sources directly — it talks to a **service abst
 
 ---
 
-## 🧰 Technology Stack
+## Technology Stack
 
 | Layer | Technology | Notes |
 | --- | --- | --- |
@@ -193,7 +225,7 @@ The client never talks to data sources directly — it talks to a **service abst
 | **Database** *(target)* | PostgreSQL | System of record for transactional data |
 | **Data Warehouse** *(target)* | Snowflake / BigQuery | Analytics & reporting |
 | **Authentication** *(target)* | OIDC / JWT + RBAC | SSO-ready, role-based access control |
-| **AI Services** *(target)* | Claude (Anthropic) | NL→SQL, summaries, approval recommendations |
+| **AI Services** *(target)* | Claude (Anthropic) | NL to SQL, summaries, approval recommendations |
 | **Cloud Services** *(target)* | Stripe, HubSpot, Zendesk, Slack | Payments, CRM, support, alerting connectors |
 | **DevOps** *(target)* | Docker, GitHub Actions, Vercel/Netlify/S3+CDN | CI/CD and static hosting |
 | **Monitoring** *(target)* | Audit log pipeline, anomaly detection, alerting | Built-in audit + alerts modules |
@@ -202,7 +234,7 @@ The client never talks to data sources directly — it talks to a **service abst
 
 ---
 
-## 🔬 System Design
+## System Design
 
 ```
         ┌──────────┐
@@ -246,7 +278,7 @@ The client never talks to data sources directly — it talks to a **service abst
 
 ---
 
-## 🗃️ Domain Model & Database Schema
+## Domain Model & Database Schema
 
 The following entities are derived directly from the application's data contracts (`src/data/mockData.js`). They define the target persistence schema.
 
@@ -311,7 +343,7 @@ Integration (1) ──< (N) Alert        Customer (1) ──< (N) Alert
 
 ---
 
-## 📡 API Documentation (Target Contract)
+## API Documentation (Target Contract)
 
 > The UI is built against these resource contracts. The current build resolves them from the mock service layer; production swaps in live endpoints with identical shapes.
 
@@ -346,7 +378,7 @@ Integration (1) ──< (N) Alert        Customer (1) ──< (N) Alert
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 ai-internal-admin-dashboard/
@@ -361,6 +393,7 @@ ai-internal-admin-dashboard/
     │   └── useAppStore.js         # Zustand global store (auth, user, environment)
     ├── data/
     │   └── mockData.js            # Typed mock data / service contracts
+    ├── Images/                    # Product screenshots used in this README
     ├── components/
     │   ├── layout/
     │   │   └── MainLayout.jsx     # Sidebar + topbar shell, env switcher, nav
@@ -385,9 +418,9 @@ ai-internal-admin-dashboard/
 
 ---
 
-## 🔄 Key Workflows
+## Key Workflows
 
-### 🔐 Authentication Flow
+### Authentication Flow
 ```
 /login → submit credentials → store.login() sets isAuthenticated
    → redirect to "/" → MainLayout renders (shell + nav)
@@ -395,7 +428,7 @@ ai-internal-admin-dashboard/
 ```
 A demo login is provided for instant preview. All twelve application routes sit behind the authenticated parent route.
 
-### ✅ Main Business Workflow — Approval Review
+### Main Business Workflow — Approval Review
 ```
 Operator opens Approval Queue
    → risk-scored requests rendered in DataTable
@@ -404,7 +437,7 @@ Operator opens Approval Queue
    → (target) decision persisted + audit event emitted
 ```
 
-### 🗂️ Data Processing Workflow — Data Explorer
+### Data Processing Workflow — Data Explorer
 ```
 Select entity tab (Customers/Orders/Payments/Tickets/Events/Logs)
    → filter & search → DataTable renders records
@@ -412,14 +445,14 @@ Select entity tab (Customers/Orders/Payments/Tickets/Events/Logs)
    → Export CSV / Generate AI Summary
 ```
 
-### 🛠️ Admin Workflow — Users & Roles
+### Admin Workflow — Users & Roles
 ```
 User Management → Add User (Modal) → row inserted optimistically
    → click user → Drawer (reset password / suspend / AI summary)
 Roles & Permissions → toggle capability per role in the permission matrix
 ```
 
-### 🤖 AI Workflow — Copilot
+### AI Workflow — Copilot
 ```
 Operator selects a suggested prompt or types a question
    → message appended → AI responds with answer + SQL preview
@@ -429,26 +462,26 @@ Governance: "Require human approval for AI actions" gates execution
 
 ---
 
-## 🖥️ Screens & Modules
+## Screens & Modules
 
 | Module | Route | What it does |
 | --- | --- | --- |
-| 🔐 **Login** | `/login` | Branded sign-in with feature highlights and demo login |
-| 📊 **Operations Dashboard** | `/` | KPIs, action/ticket charts, AI insights, approvals & alerts snapshot |
-| 👥 **User Management** | `/users` | Directory, create-user modal, detail drawer, suspend/reset |
-| 🔐 **Roles & Permissions** | `/roles` | 6×8 RBAC permission matrix |
-| 🗂️ **Data Explorer** | `/data` | Multi-entity browser with AI summaries & CSV export |
-| ✅ **Approval Queue** | `/approvals` | Risk-scored review with AI recommendations |
-| ⚙️ **Workflows** | `/workflows` | Automation monitoring, triggers, run/pause |
-| 🤖 **AI Copilot** | `/copilot` | Conversational ops assistant + SQL preview |
-| 🔔 **Alerts** | `/alerts` | Severity-ranked operational alerts & incidents |
-| 📜 **Audit Logs** | `/audit-logs` | Immutable action history with filters & export |
-| 🔌 **Integrations** | `/integrations` | Connector status & sync health |
-| ⚙️ **Settings** | `/settings` | Org, AI/security toggles, API keys, retention, theme |
+| **Login** | `/login` | Branded sign-in with feature highlights and demo login |
+| **Operations Dashboard** | `/` | KPIs, action/ticket charts, AI insights, approvals & alerts snapshot |
+| **User Management** | `/users` | Directory, create-user modal, detail drawer, suspend/reset |
+| **Roles & Permissions** | `/roles` | 6×8 RBAC permission matrix |
+| **Data Explorer** | `/data` | Multi-entity browser with AI summaries & CSV export |
+| **Approval Queue** | `/approvals` | Risk-scored review with AI recommendations |
+| **Workflows** | `/workflows` | Automation monitoring, triggers, run/pause |
+| **AI Copilot** | `/copilot` | Conversational ops assistant + SQL preview |
+| **Alerts** | `/alerts` | Severity-ranked operational alerts & incidents |
+| **Audit Logs** | `/audit-logs` | Immutable action history with filters & export |
+| **Integrations** | `/integrations` | Connector status & sync health |
+| **Settings** | `/settings` | Org, AI/security toggles, API keys, retention, theme |
 
 ---
 
-## 🔒 Security
+## Security
 
 - **Authentication** — session-based auth guard; all functional routes require an authenticated session; unauthenticated requests redirect to `/login`. *(Target: OIDC/SSO + JWT.)*
 - **Authorization** — role-based access control via a six-role permission matrix governing eight privileged capabilities.
@@ -460,7 +493,7 @@ Governance: "Require human approval for AI actions" gates execution
 
 ---
 
-## ⚡ Performance Optimizations
+## Performance Optimizations
 
 - **Code splitting & lazy loading** — Vite's ESM-native build enables route-level splitting; heavy modules can be lazily imported per route.
 - **Tree-shaking** — `lucide-react` and modular imports keep the bundle lean.
@@ -472,19 +505,19 @@ Governance: "Require human approval for AI actions" gates execution
 
 ---
 
-## 📈 Scalability
+## Scalability
 
 | Scale | Strategy |
 | --- | --- |
-| **→ 10,000 users** | Static SPA on CDN + horizontally scalable stateless API; single primary PostgreSQL with read replicas; basic caching. |
-| **→ 100,000 users** | API autoscaling behind a gateway; connection pooling; Redis caching; analytics offloaded to the warehouse; audit/events to a dedicated log store; CDN edge caching of static assets. |
+| **To 10,000 users** | Static SPA on CDN + horizontally scalable stateless API; single primary PostgreSQL with read replicas; basic caching. |
+| **To 100,000 users** | API autoscaling behind a gateway; connection pooling; Redis caching; analytics offloaded to the warehouse; audit/events to a dedicated log store; CDN edge caching of static assets. |
 | **Enterprise workloads** | Multi-region deployment, database sharding/partitioning by tenant, event-driven workflow engine, queue-based AI orchestration with rate limiting, SSO/SCIM provisioning, per-tenant data isolation, and full observability (metrics, traces, audit pipeline). |
 
 The frontend is **stateless and CDN-deployable** today, which means horizontal scaling of the UI is essentially free — the scaling story lives almost entirely in the (swappable) backend tier.
 
 ---
 
-## 🚀 Installation
+## Installation
 
 **Prerequisites:** Node.js 18+ and npm.
 
@@ -504,7 +537,7 @@ Then open **http://localhost:5173**. Use the **demo login** (prefilled credentia
 
 ---
 
-## 🔧 Environment Variables
+## Environment Variables
 
 The current build runs entirely client-side and requires **no environment variables**. The variables below document the configuration surface for the target backend integration.
 
@@ -523,7 +556,7 @@ The current build runs entirely client-side and requires **no environment variab
 
 ---
 
-## 💻 Local Development
+## Local Development
 
 | Task | Command |
 | --- | --- |
@@ -533,11 +566,11 @@ The current build runs entirely client-side and requires **no environment variab
 | **Preview** (serve the build) | `npm run preview` |
 | **Production** | Serve the `dist/` output from any static host/CDN |
 
-> Testing is not yet wired up. The recommended stack is **Vitest + React Testing Library** for unit/component tests and **Playwright** for end-to-end flows (see [Future Enhancements](#-future-enhancements)).
+> Testing is not yet wired up. The recommended stack is **Vitest + React Testing Library** for unit/component tests and **Playwright** for end-to-end flows (see [Future Enhancements](#future-enhancements)).
 
 ---
 
-## ☁️ Deployment
+## Deployment
 
 The application builds to a **static, framework-free bundle**, making it trivially deployable:
 
@@ -551,22 +584,22 @@ npm run build      # → dist/
 
 ---
 
-## 🗺️ Future Enhancements
+## Future Enhancements
 
-1. 🔌 **Live backend integration** — replace the mock service layer with REST/GraphQL clients (typed, with caching & retries).
-2. 🔐 **Enterprise SSO** — OIDC/SAML with SCIM user provisioning and JIT roles.
-3. 🤖 **Production AI orchestration** — wire the Copilot to Claude with guardrails, NL→SQL execution sandboxing, and cost controls.
-4. 🧪 **Test suite** — Vitest + React Testing Library + Playwright with CI gates and coverage thresholds.
-5. 🌗 **True theming** — implement the Dark Console theme and persist user preference.
-6. 🧱 **Workflow builder** — drag-and-drop automation designer with versioning and dry-run mode.
-7. 📊 **Advanced analytics** — cohort analysis, customer-health prediction, and anomaly forecasting.
-8. 🛡️ **Field-level authorization** — column/row-level permissions in the Data Explorer.
-9. 🌍 **Multi-tenancy & data isolation** — per-tenant schemas, region pinning, and tenant-scoped audit.
-10. 📈 **Full observability** — OpenTelemetry traces, metrics dashboards, and an alerting pipeline feeding the Alerts module.
+1. **Live backend integration** — replace the mock service layer with REST/GraphQL clients (typed, with caching & retries).
+2. **Enterprise SSO** — OIDC/SAML with SCIM user provisioning and JIT roles.
+3. **Production AI orchestration** — wire the Copilot to Claude with guardrails, NL-to-SQL execution sandboxing, and cost controls.
+4. **Test suite** — Vitest + React Testing Library + Playwright with CI gates and coverage thresholds.
+5. **True theming** — implement the Dark Console theme and persist user preference.
+6. **Workflow builder** — drag-and-drop automation designer with versioning and dry-run mode.
+7. **Advanced analytics** — cohort analysis, customer-health prediction, and anomaly forecasting.
+8. **Field-level authorization** — column/row-level permissions in the Data Explorer.
+9. **Multi-tenancy & data isolation** — per-tenant schemas, region pinning, and tenant-scoped audit.
+10. **Full observability** — OpenTelemetry traces, metrics dashboards, and an alerting pipeline feeding the Alerts module.
 
 ---
 
-## 🏆 Why This Project Stands Out
+## Why This Project Stands Out
 
 - **Production-shaped architecture from day one.** The swappable data/service seam, auth-guarded routing, centralized state, and reusable design system are the same patterns that scale to real backends — the project is structured for production, not just for a demo.
 - **Separation of concerns done right.** State, services, design system, layout, and feature pages are cleanly partitioned. Every page is composed from the same primitives, so the codebase stays DRY and consistent as it grows.
@@ -579,7 +612,7 @@ npm run build      # → dist/
 
 ---
 
-## 📄 License
+## License
 
 Released under the **MIT License**.
 
